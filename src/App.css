@@ -1,5 +1,10 @@
+
 .App {
   text-align: center;
+  
+  color: #4b765a;
+  background-color: #CCEDC8;
+  font-style: italic;
 }
 
 .App-logo {
@@ -11,6 +16,18 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.logo{
+  width: 400px;
+  height: 250px;
+}
+
+.header{
+  /* position: fixed; */
+  /* width: 100%; */
+  opacity: 1.0;
+  transition: all 0.4s ease 0s;
 }
 
 .App-header {
@@ -35,4 +52,100 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+          /* HEADER */
+
+.Header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link{
+  margin-left: 5px;
+  margin-right: 40px;
+  font-size: 17px;
+  color: rgb(75, 118, 90);
+}
+
+            /*LOGIN */
+.principal{
+  margin: 30px 0px 0px 0px;
+  border:#fb7861;
+  display: flex;
+  flex-direction: column;
+}
+
+.Formulario{
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+        /*HOMEPAGE*/
+
+.ContainerImagenes{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+ion-icon{
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+          /*FOOTER*/
+
+.footer{
+  padding: 10px; 
+  background-color: white;
+}
+
+.icons{
+  display: flex;
+  justify-content:center;
+  align-items: end;
+}
+
+          /*PRODUCTS*/
+
+.CardContainer{
+  margin-top: 70px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 3fr);
+  grid-gap: 15px;
+}
+
+.CardProducts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputCon{
+  display: flex;
+  margin-left: 870px;
+  justify-content: space-evenly;
+}
+
+.inputLook{
+  margin-top: 30px;
+  width: 200px;
+  border: 0.3px gray solid;
+  border-radius: 10px;
+  font-weight: 1;
+  text-align: center;
+}
+
+      /* PRODUCTO */
+.CardAlone{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
