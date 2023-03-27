@@ -9,18 +9,18 @@ import { Navigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const {user} = useSelector((state) => state.formValidation)
+  const user = useSelector((state) => state.FormValidation.user)
   const [username, setUsername] = useState('kminchelle')
   const [password, setPassword] = useState('0lelplR')
 
   const dispatch = useDispatch()
 
-  // function tryLogin() {
-  //   dispatch(doLoginUser({username: username, password: password}))
-  // }
+  function tryLogin() {
+    dispatch(doLoginUser({username: username, password: password}))
+  }
 
 
-  if(user && user.id){
+  if(user){
     return (
       <Navigate to='/profile' replace></Navigate>
     )
@@ -44,24 +44,27 @@ const Login = () => {
             wrapperCol={{ span: 16 }}
             style={{ maxWidth: 600 }}
             initialValues={{ remember: true }}
-            onFinish={onFinish}
+            onFinish={tryLogin}
             onFinishFailed={onFinishFailed}
-            autoComplete="off"
+            // autoComplete="off"
           >
           <Form.Item
             label="Username"
             name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             rules={[{ required: true, message: 'Please input your username!' }]}
           >
-            <Input value={username} onChange={(e) => setUsername(e.target.value)} placeholder='user' type='user' />
+            <Input />
           </Form.Item>
-
           <Form.Item
             label="Password"
             name="password"
+            value={password}
+            onChange={(e) =>  setPassword(e.target.value)}
             rules={[{ required: true, message: 'Please input your password!' }]}
           >
-            <Input.Password value={password} onChange={(e) => setPassword(e.target.value)} placeholder='password' type='password'/>
+            <Input.Password />
           </Form.Item >
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
@@ -69,7 +72,7 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" onClick={tryLogin}>
               Submit
             </Button>
           </Form.Item>

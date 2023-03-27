@@ -3,7 +3,8 @@ import axios from 'axios';
 import {
   DO_LOGIN,
   DO_LOGIN_OK,
-  DO_LOGIN_FAIL
+  DO_LOGIN_FAIL,
+  DO_LOGIN_OUT
 }from './actionType'
 
 export function doLogin (loginData) {
@@ -27,6 +28,13 @@ export function doLoginFail (error){
   }
 }
 
+// export function doLoginOut (){
+//   return{
+//     type: DO_LOGIN_FAIL,
+//     payload: 
+//   }
+// }
+
 export function doLoginUser(userData){
   return async(dispatch)=>{
     try{
@@ -39,3 +47,9 @@ export function doLoginUser(userData){
     }
   }
 }
+
+// export function doLoginOut () {
+//   return async(dispatch)=>{
+
+//   }
+// }

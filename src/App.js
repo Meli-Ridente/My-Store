@@ -8,10 +8,12 @@ import Footer from './components/Footer/Footer'
 import Products from './pages/Products';
 import ProductoPage from './pages/ProductoPage'
 import { useSelector } from 'react-redux';
+import { useMemo } from 'react';
 
 function App() {
 
-  const {user} = useSelector((state) => state.FormValidation)
+  const user = useSelector((state) => state.FormValidation.user)
+  console.log(Boolean(user));
 
   return (
     
@@ -23,7 +25,7 @@ function App() {
         <Route exact path='/profile' element={<ProfilePage/>}></Route>
         <Route exact path='/products' element={<Products/>}></Route>
         <Route exact path='/product/:id' element={<ProductoPage />}></Route>
-        <Route exact path='/profile' element={user && user.id ? <ProfilePage /> : <Navigate to='/login' replace></Navigate>}></Route>
+        <Route exact path='/profile' element={user ? <ProfilePage /> : <Navigate to='/login' replace />}></Route>
       </Routes>
     <Footer></Footer>
     </div>

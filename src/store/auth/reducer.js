@@ -7,13 +7,13 @@ import {
 
 const initialState = {
   loading: false,
-  user: {},
+  user: undefined,
   error:{
     message: ''
   }
 }
 
-export default function formValidation (state = initialState, action) {
+export default function FormValidation (state = initialState, action) {
   switch(action.type)
   {
     case DO_LOGIN:

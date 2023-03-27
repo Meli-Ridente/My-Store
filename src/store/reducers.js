@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import ProductsReducer from './posts/reducer'
-import formValidation from "./auth/reducer";
+import FormValidation from "./auth/reducer";
 
 const rootReducer = combineReducers ({
   ProductsReducer,
-  formValidation
+  FormValidation
 })
 
 export default rootReducer;

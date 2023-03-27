@@ -130,15 +130,21 @@ ion-icon{
 
 .inputCon{
   display: flex;
-  margin-left: 870px;
-  justify-content: space-evenly;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: end;
+  margin-right: 330px;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
+
 
 .inputLook{
   margin-top: 30px;
   width: 200px;
   border: 0.3px gray solid;
   border-radius: 10px;
+  margin-right: 10px;
   font-weight: 1;
   text-align: center;
 }
@@ -148,4 +154,19 @@ ion-icon{
   display: flex;
   justify-content: center;
   margin: 50px;
+}
+
+
+.Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CardUser{
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
 }
