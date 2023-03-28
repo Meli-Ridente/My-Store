@@ -9,9 +9,7 @@ export default function ProfilePage () {
   return (
     <div className="CardUser">
       <p style={{fontSize: '25px'}}>Welcome Back!</p>
-      <img alt="example" src={user.image} />
-      {user.age}
-    {/* <Card
+    <Card
       hoverable
       style={{
         width: 240,
@@ -22,7 +20,7 @@ export default function ProfilePage () {
         description= {user.gender}></Meta>
         {user.gender === 'female' ? <WomanOutlined /> : <ManOutlined />  }
         {user.age}
-    </Card> */}
+    </Card>
   </div>
   )
 }
