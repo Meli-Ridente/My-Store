@@ -6,11 +6,6 @@ import  ProductoComponent  from '../components/Producto/Producto'
 
 const ProductoPage = () => {
   const params = useParams()
-  // const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   dispatch(getProducto(params.id))
-  // }, [])
 
   return(
     <div>

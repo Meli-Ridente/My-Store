@@ -35,7 +35,7 @@ export default function FormValidation (state = initialState, action) {
         break;
 
     case DO_LOGIN_FAIL:
-        state = {...state, loading: false, user:undefined}
+        state = {...state, loading: false, user:{}}
         break;
     case DO_LOGOUT:
         state={...state, user:undefined}

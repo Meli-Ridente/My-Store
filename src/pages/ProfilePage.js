@@ -10,11 +10,11 @@ export default function ProfilePage () {
   const [t, i18n] = useTranslation("global")
 
   const { Meta } = Card;
-  if(user === undefined){
-    return (
-      <Navigate to='/login' replace></Navigate>
-    )
-  }
+  // if(user === undefined){
+  //   return (
+  //     <Navigate to='/login' replace></Navigate>
+  //   )
+  // }
   return( 
     <>
     {user && (

@@ -27,18 +27,18 @@ const ProductoComponent = () => {
 
   return (
   <div className='CardAlone'> 
-     <Card style={{ width: 400, padding:'10px'}} cover={
-      <img alt="example" src={producto.image}/>}
+     <Card className='Card' cover={
+      <img alt="example" src={producto.image} style={{width:'200px'}}/>}
       actions={[
         <ion-icon name="heart-outline"></ion-icon>,
         <ion-icon name="trash-outline"></ion-icon>
       ]}>
 
-    <Meta avatar={<Avatar src="https://joesch.moe/api/v1/random" />}
-    title={producto.title}
-      description={producto.description}
-    />
-  </Card>
+      <Meta 
+      title={producto.title}
+        description={producto.description}
+      />
+    </Card>
   </div>
 )};
 
