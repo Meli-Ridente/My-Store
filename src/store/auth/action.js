@@ -4,13 +4,23 @@ import {
   DO_LOGIN,
   DO_LOGIN_OK,
   DO_LOGIN_FAIL,
-  DO_LOGIN_OUT
+  DO_LOGIN_OUT,
+
+  DO_LOGOUT,
+  DO_LOGOUT_OK,
+  DO_LOGOUT_FAIL
 }from './actionType'
 
 export function doLogin (loginData) {
   return { 
     type: DO_LOGIN,
     payload: loginData
+  }
+}
+
+export function doLogout (){
+  return{
+    type: DO_LOGOUT
   }
 }
 
@@ -21,6 +31,13 @@ export function doLoginOk (userData){
   }
 }
 
+export function doLogoutOk (){
+  return{
+    type: DO_LOGOUT_OK
+  }
+}
+
+
 export function doLoginFail (error){
   return{
     type: DO_LOGIN_FAIL,
@@ -28,12 +45,14 @@ export function doLoginFail (error){
   }
 }
 
-// export function doLoginOut (){
-//   return{
-//     type: DO_LOGIN_FAIL,
-//     payload: 
-//   }
-// }
+export function doLogoutFail (error){
+  return{
+    type: DO_LOGOUT_FAIL,
+    payload: error
+  }
+}
+
+
 
 export function doLoginUser(userData){
   return async(dispatch)=>{
@@ -48,8 +67,14 @@ export function doLoginUser(userData){
   }
 }
 
-// export function doLoginOut () {
-//   return async(dispatch)=>{
+export function actionDoLogout() {
+  return(dispatch)=>{
+    try{
+      dispatch(doLogout())
+      dispatch(doLoginOk())
 
-//   }
-// }
+    }catch(error){
+      dispatch(doLogoutFail)
+    }
+  }
+}

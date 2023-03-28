@@ -8,9 +8,10 @@ export default function ProfilePage () {
   const { Meta } = Card;
   return (
     <div className="CardUser">
-      <h1 style={{textTransform: 'capitalize'}}>{user.username}</h1>
-
-    <Card
+      <p style={{fontSize: '25px'}}>Welcome Back!</p>
+      <img alt="example" src={user.image} />
+      {user.age}
+    {/* <Card
       hoverable
       style={{
         width: 240,
@@ -20,7 +21,8 @@ export default function ProfilePage () {
         <Meta title={user.firstName + ' ' + user.lastName} style={{textTransform: 'capitalize'}}
         description= {user.gender}></Meta>
         {user.gender === 'female' ? <WomanOutlined /> : <ManOutlined />  }
-    </Card>
+        {user.age}
+    </Card> */}
   </div>
   )
 }

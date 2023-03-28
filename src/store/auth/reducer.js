@@ -5,9 +5,17 @@ import {
   DO_LOGIN_FAIL
 }from './actionType'
 
+function conservarUser(){
+  try{  
+    return JSON.parse(localStorage.getItem("_user"))
+  }catch(error){
+    return {}
+  }
+}
+
 const initialState = {
   loading: false,
-  user: undefined,
+  user: conservarUser(),
   error:{
     message: ''
   }

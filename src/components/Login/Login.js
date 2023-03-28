@@ -26,10 +26,6 @@ const Login = () => {
     )
   }
 
-  const onFinish = (values) => {
-    console.log('Success:', values);
-  };
-
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
@@ -46,7 +42,6 @@ const Login = () => {
             initialValues={{ remember: true }}
             onFinish={tryLogin}
             onFinishFailed={onFinishFailed}
-            // autoComplete="off"
           >
           <Form.Item
             label="Username"
