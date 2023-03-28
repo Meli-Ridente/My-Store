@@ -19,7 +19,6 @@ const Login = () => {
     dispatch(doLoginUser({username: username, password: password}))
   }
 
-
   if(user){
     return (
       <Navigate to='/profile' replace></Navigate>

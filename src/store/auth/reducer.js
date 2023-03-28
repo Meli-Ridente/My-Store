@@ -2,7 +2,9 @@
 import {
   DO_LOGIN,
   DO_LOGIN_OK,
-  DO_LOGIN_FAIL
+  DO_LOGIN_FAIL,
+
+  DO_LOGOUT
 }from './actionType'
 
 function conservarUser(){
@@ -33,7 +35,10 @@ export default function FormValidation (state = initialState, action) {
         break;
 
     case DO_LOGIN_FAIL:
-        state = {...state, loading: false, user:{}}
+        state = {...state, loading: false, user:undefined}
+        break;
+    case DO_LOGOUT:
+        state={...state, user:undefined}
         break;
 
     default:

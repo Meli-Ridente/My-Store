@@ -13,9 +13,8 @@ const Header = () => {
   function logOutUser(){
     dispatch(actionDoLogout())
   }
+  console.log(user)
   return(
-   <>
-   
     <Navbar bg='white' variant='white'>
       
       <Container>
@@ -24,12 +23,12 @@ const Header = () => {
           <Link to='/products' className='link'><ShopOutlined /> Products</Link>
           {user ? '' : <Link to='/login' className='link' ><UserAddOutlined /> Login</Link> } 
           {user ? <Link to='/profile' className='link'><UserOutlined /> Profile</Link>  : '' }
+          
           {user ? <Link className='link' onClick={logOutUser}><UserOutlined /> Logout</Link> : ''}
   
         </Nav> 
       </Container>
-    </Navbar>
-    </>)
+    </Navbar>)
 
 };
 

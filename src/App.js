@@ -13,7 +13,6 @@ import { useMemo } from 'react';
 function App() {
 
   const user = useSelector((state) => state.FormValidation.user)
-  console.log(Boolean(user));
 
   return (
     
