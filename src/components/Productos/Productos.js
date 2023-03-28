@@ -9,6 +9,8 @@ import { Container } from 'react-bootstrap';
 import { Card, Space, Rate } from 'antd';
 import {SearchOutlined, StarOutlined} from '@ant-design/icons'
 
+import { useTranslation } from 'react-i18next';
+
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
 
@@ -17,7 +19,7 @@ const Productos = () => {
   const dispatch = useDispatch()
   const {products, loadingProducts} = useSelector((state) => state.ProductsReducer)
   const [busqueda, setBusqueda] = useState(products);
-
+  const [t, i18n] = useTranslation("global")
 
 
   useEffect(() => {
@@ -57,12 +59,12 @@ const Productos = () => {
         <SearchOutlined style={{fontSize:'25px'}} />
       </div>
       <Container className='CardContainer'>
-        <SimpleBar style={{ maxHeight: 600 , width: 1300, padding: '20px'}} className='CardContainer'>
+        <SimpleBar style={{ maxHeight: 600 , width: 1100, padding: '20px'}} className='CardContainer'>
         
           {busqueda.map(product => {
             return(
               <Space direction="vertical" size={14}>
-                <Card title={product.title} extra={<Link to={`/product/${product.id}`}>More</Link>} style={{ width: 300 , margin: '20px'}}>
+                <Card title={product.title} extra={<Link to={`/product/${product.id}`}>{t("Products.more")}</Link>} style={{ width: 300 , margin: '20px'}}>
                   <div className='CardProducts'>
                     <img src={product.image} style={{width: '200px', height: '200px'}}/>
                     <p style={{marginTop:'50px', fontSize:'larger'}}>€ {product.price}</p>

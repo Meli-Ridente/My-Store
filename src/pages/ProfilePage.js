@@ -3,20 +3,23 @@ import { UserOutlined, ManOutlined, WomanOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { Card } from 'antd';
 import { Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function ProfilePage () {
   const user = useSelector((state) => state.FormValidation.user)
+  const [t, i18n] = useTranslation("global")
+
   const { Meta } = Card;
   if(user === undefined){
     return (
-      <Navigate to='/' replace></Navigate>
+      <Navigate to='/login' replace></Navigate>
     )
   }
   return( 
     <>
     {user && (
       <div className="CardUser">
-        <p style={{fontSize: '25px'}}>Welcome Back!</p>
+        <p style={{fontSize: '25px'}}>{t("Profile.welcome")}</p>
         <Card
           hoverable
           style={{

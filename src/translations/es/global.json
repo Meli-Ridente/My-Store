@@ -1,0 +1,22 @@
+{
+  "Header":{
+    "home": "Inicio",
+    "products": "Productos",
+    "profile": "Perfil",
+    "logout": "Salir",
+    "login": "Registrate"
+  },
+  "Login":{
+    "loginpage": "Pagina de registro",
+    "username": "Nombre",
+    "password": "Contraseña",
+    "remember": "Recuerdame",
+    "submit": "Enviar"
+   },
+  "Products":{
+    "more": "Más"
+  },
+  "Profile":{
+    "welcome": "Bienvenido nuevamente!"
+  }
+}

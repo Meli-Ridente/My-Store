@@ -1,0 +1,22 @@
+{
+  "Header":{
+    "home": "Home",
+    "products": "Products",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "Login":{
+    "loginpage": "Loginpage",
+    "username": "username",
+    "password": "password",
+    "remember": "Remember me",
+    "submit": "submit"
+  },
+  "Products":{
+    "more": "More"
+  },
+  "Profile":{
+    "welcome": "Welcome back!"
+  }
+}
